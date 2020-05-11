@@ -2,8 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixth_app_great_places/models/place.dart';
-
+  
 import '../models/place.dart';
 
 import '../providers/great_places.dart';
