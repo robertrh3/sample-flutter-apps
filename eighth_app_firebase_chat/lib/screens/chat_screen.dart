@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../widgets/chat/messages.dart';
+import '../widgets/chat/new_message.dart';
 
 class ChatScreen extends StatelessWidget {
   @override
@@ -46,6 +48,7 @@ class ChatScreen extends StatelessWidget {
             Expanded(
               child: Messages(),
             ),
+            NewMessage(),
           ],
         ),
       ),
@@ -69,25 +72,25 @@ class ChatScreen extends StatelessWidget {
       //       .collection('chats/9QaxCbW0kvd3YVDg6bB9/messages')
       //       .snapshots(),
       // ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Firestore.instance
-              .collection('chats/9QaxCbW0kvd3YVDg6bB9/messages')
-              .add({'text': 'This was added by clicking the button!'});
-          // Firestore.instance
-          //     .collection('chats/9QaxCbW0kvd3YVDg6bB9/messages')
-          //     .snapshots()
-          //     .listen((data) {
-          //   data.documents.forEach((document) {
-          //     print(document['text']);
-          // });
-          // print(data.documents[0]['text']);
-          // });
-        },
-        child: Icon(
-          Icons.add,
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Firestore.instance
+      //         .collection('chats/9QaxCbW0kvd3YVDg6bB9/messages')
+      //         .add({'text': 'This was added by clicking the button!'});
+      // Firestore.instance
+      //     .collection('chats/9QaxCbW0kvd3YVDg6bB9/messages')
+      //     .snapshots()
+      //     .listen((data) {
+      //   data.documents.forEach((document) {
+      //     print(document['text']);
+      // });
+      // print(data.documents[0]['text']);
+      // });
+      //   },
+      //   child: Icon(
+      //     Icons.add,
+      //   ),
+      // ),
     );
   }
 }
