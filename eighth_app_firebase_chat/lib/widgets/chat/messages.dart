@@ -18,7 +18,7 @@ class Messages extends StatelessWidget {
         }
         return StreamBuilder(
           stream: Firestore.instance
-              .collection('chats/9QaxCbW0kvd3YVDg6bB9/messages')
+              .collection('chats/{chatId}/messages')
               .orderBy('createdAt', descending: true)
               .snapshots(),
           builder: (context, chatSnapshot) {
@@ -34,6 +34,7 @@ class Messages extends StatelessWidget {
               itemBuilder: (context, index) => MessageBubble(
                 chatDocs[index]['text'],
                 chatDocs[index]['username'],
+                chatDocs[index]['userImage'],
                 chatDocs[index]['userId'] == futureSnapshot.data.uid,
                 key: ValueKey(chatDocs[index].documentID),
               ),
